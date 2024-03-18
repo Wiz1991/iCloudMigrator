@@ -4,8 +4,8 @@ from pyicloud import PyiCloudService
 from tqdm import tqdm
 import shutil
 
-email = input('Enter your email')
-password = input('Enter your password')
+email = input('Enter your email:  ')
+password = input('Enter your password:  ')
 
 api = PyiCloudService(email, password)
 
@@ -28,8 +28,8 @@ if api.requires_2fa:
             print("Failed to request trust. You will likely be prompted for the code again in the coming weeks")
 
 
-target = input("Enter path of target folder to upload")
-icloud_target = input("Enter iCloud Drive folder to upload at")
+target = input("Enter path of target folder to upload:  ")
+icloud_target = input("Enter iCloud Drive folder to upload at:  ")
 
 for root, dirs, files in os.walk(target):
     for file in tqdm(files):
